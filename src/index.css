@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* ── Design System: Brutalist / Editorial ── */
+:root {
+  --color-bg:      #0d0d0d;
+  --color-cream:   #f0ece3;
+  --color-border:  #1e1e1e;
+  --color-border-cream: #dedad2;
+
+  --color-text-dark:    #0d0d0d;
+  --color-text-light:   #f0ece3;
+  --color-text-muted-dark:  #a0a0a0;
+  --color-text-muted-light: #7a7060;
+
+  /* Badge accent colors */
+  --badge-green:   #2ee89a;
+  --badge-orange:  #ff5c1a;
+  --badge-pink:    #ff2eb0;
+  --badge-cyan:    #00d4ff;
+  --badge-yellow:  #f5dc00;
+  --badge-violet:  #b060ff;
+
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+/* ── Tailwind v4 theme registration ── */
+@theme {
+  --color-bg:             var(--color-bg);
+  --color-cream:          var(--color-cream);
+  --color-border:         var(--color-border);
+  --color-border-cream:   var(--color-border-cream);
+  --color-text-dark:      var(--color-text-dark);
+  --color-text-light:     var(--color-text-light);
+  --color-text-muted-dark:  var(--color-text-muted-dark);
+  --color-text-muted-light: var(--color-text-muted-light);
+  --badge-green:    var(--badge-green);
+  --badge-orange:   var(--badge-orange);
+  --badge-pink:     var(--badge-pink);
+  --badge-cyan:     var(--badge-cyan);
+  --badge-yellow:   var(--badge-yellow);
+  --badge-violet:   var(--badge-violet);
+  --font-family-display: var(--font-display);
+  --font-family-sans:    var(--font-sans);
+}
+
+/* ── Base resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Display font utility ── */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+/* ── Keyframes ── */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50%       { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes float-slow-rev {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50%       { transform: translateY(8px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-float     { animation: float-slow     4s ease-in-out infinite; }
+.animate-float-rev { animation: float-slow-rev 4s ease-in-out infinite; }
+.animate-marquee   { animation: marquee 18s linear infinite; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+/* ── Selection ── */
+::selection { background: #f5dc00; color: #0d0d0d; }
+
+/* ── Focus ── */
+:focus-visible { outline: 2px solid #f5dc00; outline-offset: 3px; }
