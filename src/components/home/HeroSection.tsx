@@ -30,11 +30,12 @@ export default function HeroSection() {
             className="font-display leading-none block w-full text-center"
             style={{
               fontSize: 'clamp(72px, 17.5vw, 280px)',
-              color: 'var(--color-text-light)',
               letterSpacing: '0.01em',
             }}
           >
-            DEVELOPER.
+            <span style={{ backgroundColor: '#f5dc00', color: '#0d0d0d' }}>
+              DEVELOPER.
+            </span>
           </h1>
         </motion.div>
 
